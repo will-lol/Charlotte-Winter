@@ -15,8 +15,8 @@
             font-style: normal;
             font-weight: 400;
             src: local(''),
-                url('../assets/fonts/nosifer-v20-latin-regular.woff2') format('woff2'),
-                url('../assets/fonts/nosifer-v20-latin-regular.woff') format('woff');
+                url('assets/fonts/nosifer-v20-latin-regular.woff2') format('woff2'),
+                url('assets/fonts/nosifer-v20-latin-regular.woff') format('woff');
         }
 
         h1 {
@@ -37,7 +37,7 @@
         }
 
         body {
-            background-image: url("../assets/images/winter.webp");
+            background-image: url("assets/images/winter.webp");
             transform: translateX();
         }
 
@@ -67,13 +67,13 @@
     </style>
     <h1>hello Charlotte winter happy birthday to you</h1>
     <div class="image-wrap">    
-        <img src="/assets/images/charlotte.webp" alt="a picture of charlotte winter">
-        <img class="fade-in" src="/assets/images/mii.webp" alt="">
+        <img src="assets/images/charlotte.webp" alt="a picture of charlotte winter">
+        <img class="fade-in" src="assets/images/mii.webp" alt="">
     </div>
     <p>This is an interactive spooky choose your own adventure story.</p>
     <h2>Be very careful. one of the below buttons might order a hitman to your house dont know yet.</h2>
-    <img id="thomas-killer" class="thomas-killer" src="/assets/images/thoomas.webp" alt="thomas the killer">
-    <a href="/nightmare.html"><button>start the adventure</button></a>
+    <img id="thomas-killer" class="thomas-killer" src="assets/images/thoomas.webp" alt="thomas the killer">
+    <a href="nightmare.html"><button>start the adventure</button></a>
     <script>
         function kill() {
             document.getElementById("mistake").innerHTML = "a killer has been ordered will be here soon!";
@@ -95,15 +95,15 @@
     <button id="mistake" onclick="kill()">stay here like a loser</button>
     <button onclick="stopNoises()">stop the noises</button>
     <button style="width: 400px; height: 200px">Press here!!!</button>
-    <a href="/party.html"><button>party time!</button></a>
+    <a href="party.html"><button>party time!</button></a>
     <p>Good job</p>
-    <img src="/assets/images/dancing-banana.gif" alt="">
-    <img src="/assets/images/homer.gif" alt="">
+    <img src="assets/images/dancing-banana.gif" alt="">
+    <img src="assets/images/homer.gif" alt="">
     <script>
         audios = [];
         document.addEventListener('scroll', function(e) {
             if (Math.random() > 0.8) {
-                var audio = new Audio('/assets/audio/annoying.webm');
+                var audio = new Audio('assets/audio/annoying.webm');
                 audios.push(audio);
                 audio.play()
             }
