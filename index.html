@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chartlote winner</title>
+</head>
+
+<body>
+    <style>
+        @font-face {
+            font-family: 'Nosifer';
+            font-style: normal;
+            font-weight: 400;
+            src: local(''),
+                url('../assets/fonts/nosifer-v20-latin-regular.woff2') format('woff2'),
+                url('../assets/fonts/nosifer-v20-latin-regular.woff') format('woff');
+        }
+
+        h1 {
+            font-family: "Nosifer";
+            background-color: red;
+        }
+
+        .thomas-killer {
+            height: 10vh;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            display: none;
+        }
+
+        :root {
+            font-family: cursive;
+        }
+
+        body {
+            background-image: url("../assets/images/winter.webp");
+            transform: translateX();
+        }
+    </style>
+    <h1>hello Charlotte winter happy birthday to you</h1>
+    <img src="assets/images/charlotte.webp" alt="a picture of charlotte winter">
+    <p>This is an interactive spooky choose your own adventure story.</p>
+    <h2>Be very careful. one of the below buttons might order a hitman to your house dont know yet.</h2>
+    <img id="thomas-killer" class="thomas-killer" src="/assets/images/thoomas.webp" alt="thomas the killer">
+    <a href="/nightmare.html"><button>start the adventure</button></a>
+    <script>
+        function kill() {
+            document.getElementById("mistake").innerHTML = "a killer has been ordered will be here soon!";
+            document.getElementById("thomas-killer").style.display = "block"
+            var thomasKilling = [
+                { transform: 'translateX(0vw)' },
+                { transform: 'translateX(-100vw)' },
+            ];
+            var thomasKillingTiming = {
+                duration: 1000,
+                iterations: Infinity
+            }
+            document.getElementById("thomas-killer").animate(
+                thomasKilling,
+                thomasKillingTiming
+            )
+        }
+    </script>
+    <button id="mistake" onclick="kill()">stay here like a loser</button>
+    <button onclick="stopNoises()">stop the noises</button>
+    <button style="width: 400px; height: 200px">Press here!!!</button>
+    <a href="/party.html"><button>party time!</button></a>
+    <p>Good job</p>
+    <img src="/assets/images/dancing-banana.gif" alt="">
+    <img src="/assets/images/homer.gif" alt="">
+    <script>
+        audios = [];
+        document.addEventListener('scroll', function(e) {
+            if (Math.random() > 0.8) {
+                var audio = new Audio('/assets/audio/annoying.webm');
+                audios.push(audio);
+                audio.play()
+            }
+            console.log(audios);
+        });      
+        
+        function stopNoises() {
+            const problem = generateProblem()
+            userAnswer = window.prompt("Solve this problem first: " + problem.string, "No calculator allowed. I will know.");
+            if (userAnswer == problem.answer) {
+                audios.forEach(element => {element.pause()})
+            } else {
+                if (window.confirm("Wrong. Try again?")) {
+                    stopNoises()
+                }
+            }
+        }
+
+        function generateProblem() {
+            problem = {string:"", answer:1}
+            iterations = (Math.floor(Math.random() * 10)) + 5;
+            for (let n = 0; n < iterations ; n++) {
+                num = (Math.floor(Math.random() * 100));
+                if (n == (iterations-1)) {
+                    problem.string = problem.string.concat(num);
+                } else {
+                    problem.string = problem.string.concat(num, " × ");
+                }
+                problem.answer *= num;
+            }
+            
+            return problem;
+        }
+    </script>
+</body>
+
+</html>
